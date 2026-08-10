@@ -44,10 +44,17 @@ class FrankfurterClient
     }
 
     /**
-     * @param  string $base  Three letter ISO currency code
-     * @param  string $quote Three letter ISO currency code
-     * @return array {date, base, quote, rate}
-     * @throws LocalizedException
+     * Retrieve the latest exchange rate for a currency pair.
+     *
+     * Validates the supplied ISO 4217 currency codes and retrieves the
+     * exchange rate from the Frankfurter API. Responses are cached to
+     * reduce external API requests.
+     *
+     * @param string $base Base ISO 4217 currency code.
+     * @param string $quote Quote ISO 4217 currency code.
+     * @return array<string, mixed> Exchange rate response data.
+     * @throws LocalizedException When the currency codes are invalid or
+     * the exchange rate cannot be retrieved. 
      */
     public function getRate(string $base, string $quote): array
     {
@@ -130,8 +137,8 @@ class FrankfurterClient
         }
 
         /**
- * @var Curl $curl 
-*/
+         * @var Curl $curl 
+         */
         $curl = $this->curlFactory->create();
         $curl->setOption(CURLOPT_TIMEOUT, 8);
         $curl->setOption(CURLOPT_CONNECTTIMEOUT, 5);
