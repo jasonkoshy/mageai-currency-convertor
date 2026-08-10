@@ -1,8 +1,7 @@
 # MageAI_CurrencyConverter
 
 A storefront currency exchange converter for Magento 2, powered by the free
-[Frankfurter API](https://frankfurter.dev) (no API key required, 201 currencies,
-84 central banks).
+[Frankfurter API](https://frankfurter.dev) .
 
 ## What it does
 
