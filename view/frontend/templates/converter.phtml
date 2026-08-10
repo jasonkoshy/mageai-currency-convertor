@@ -1,0 +1,83 @@
+<?php
+/**
+ *
+ * @var \MageAI\CurrencyConverter\Block\Converter $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<div class="magexc-currency-converter"
+     data-mage-init='{"MageAI_CurrencyConverter/js/converter": <?= /* @noEscape */ $block->getWidgetConfigJson() ?>}'>
+
+    <p class="magexc-cc__subtitle">
+        <?= $escaper->escapeHtml(__('Live rates for every currency supported by the Frankfurter API.')) ?>
+    </p>
+
+    <div class="magexc-cc__loading" data-role="loading">
+        <?= $escaper->escapeHtml(__('Loading currencies…')) ?>
+    </div>
+
+    <div class="magexc-cc__error" data-role="error" style="display:none;"></div>
+
+    <div class="magexc-cc__panel" data-role="panel" style="display:none;">
+
+        <div class="magexc-cc__amount-row">
+            <label for="magexc-cc-amount"><?= $escaper->escapeHtml(__('Amount')) ?></label>
+            <input type="number" min="0" step="any" id="magexc-cc-amount" data-role="amount" value="1"/>
+        </div>
+
+        <div class="magexc-cc__selectors">
+            <div class="magexc-cc__field">
+                <label for="magexc-cc-from"><?= $escaper->escapeHtml(__('From')) ?></label>
+                <select id="magexc-cc-from" data-role="from-select"></select>
+            </div>
+
+            <button type="button"
+                    class="magexc-cc__swap"
+                    data-role="swap"
+                    title="<?= $escaper->escapeHtmlAttr(__('Swap currencies')) ?>"
+                    aria-label="<?= $escaper->escapeHtmlAttr(__('Swap currencies')) ?>">
+                <span aria-hidden="true">&#8646;</span>
+            </button>
+
+            <div class="magexc-cc__field">
+                <label for="magexc-cc-to"><?= $escaper->escapeHtml(__('To')) ?></label>
+                <select id="magexc-cc-to" data-role="to-select"></select>
+            </div>
+        </div>
+
+        <div class="magexc-cc__result" data-role="result">
+            <div class="magexc-cc__converted" data-role="converted-amount">&nbsp;</div>
+            <div class="magexc-cc__rate-line" data-role="rate-line">&nbsp;</div>
+            <div class="magexc-cc__rate-date" data-role="rate-date">&nbsp;</div>
+        </div>
+
+        <div class="magexc-cc__history">
+            <div class="magexc-cc__history-header">
+                <h2><?= $escaper->escapeHtml(__('Rate history')) ?></h2>
+                <div class="magexc-cc__range-buttons" data-role="range-buttons">
+                    <button type="button" data-range="1W"><?= $escaper->escapeHtml(__('1W')) ?></button>
+                    <button type="button" data-range="1M" class="is-active"><?= $escaper->escapeHtml(__('1M')) ?></button>
+                    <button type="button" data-range="3M"><?= $escaper->escapeHtml(__('3M')) ?></button>
+                    <button type="button" data-range="6M"><?= $escaper->escapeHtml(__('6M')) ?></button>
+                    <button type="button" data-range="1Y"><?= $escaper->escapeHtml(__('1Y')) ?></button>
+                </div>
+            </div>
+
+            <div class="magexc-cc__chart-wrap">
+                <svg data-role="chart" viewBox="0 0 640 220" preserveAspectRatio="none"></svg>
+                <div class="magexc-cc__chart-empty" data-role="chart-empty" style="display:none;">
+                    <?= $escaper->escapeHtml(__('No historical data available for this pair.')) ?>
+                </div>
+            </div>
+
+            <div class="magexc-cc__chart-legend">
+                <span data-role="chart-min"></span>
+                <span data-role="chart-max"></span>
+            </div>
+        </div>
+
+        <p class="magexc-cc__attribution">
+            <?= $escaper->escapeHtml(__('Rates provided by the Frankfurter API, sourced from central banks.')) ?>
+        </p>
+    </div>
+</div>

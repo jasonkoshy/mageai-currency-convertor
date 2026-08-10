@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" layout="1column">
+    <head>
+        <title>Currency Exchange Converter</title>
+        <meta name="description" content="Convert between currencies with live exchange rates and view historical rate trends."/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="MageAI\CurrencyConverter\Block\Converter"
+                   name="currency.converter"
+                   template="MageAI_CurrencyConverter::converter.phtml"
+                   cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>

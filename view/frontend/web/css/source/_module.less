@@ -1,0 +1,220 @@
+//
+//  MageAI_CurrencyConverter
+//  All rules are scoped under .magexc-currency-converter so this module never
+//  bleeds into theme styles regardless of which theme it's installed on.
+//  _____________________________________________
+
+.magexc-currency-converter {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 0 40px;
+
+    .magexc-cc__title {
+        margin-bottom: 4px;
+    }
+
+    .magexc-cc__subtitle {
+        color: #6f7377;
+        margin-bottom: 24px;
+    }
+
+    .magexc-cc__loading {
+        padding: 24px 0;
+        color: #6f7377;
+    }
+
+    .magexc-cc__error {
+        background: #fdf0f0;
+        border: 1px solid #e02b27;
+        color: #e02b27;
+        padding: 12px 16px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+    .magexc-cc__panel {
+        background: #fff;
+        border: 1px solid #e3e3e3;
+        border-radius: 8px;
+        padding: 24px;
+    }
+
+    .magexc-cc__amount-row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        label {
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        input[type='number'] {
+            font-size: 1.4rem;
+            padding: 10px 12px;
+            border: 1px solid #c2c2c2;
+            border-radius: 4px;
+            max-width: 220px;
+        }
+    }
+
+    .magexc-cc__selectors {
+        display: flex;
+        align-items: flex-end;
+        gap: 12px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+    }
+
+    .magexc-cc__field {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 200px;
+
+        label {
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        select {
+            padding: 6px 12px;
+            border: 1px solid #c2c2c2;
+            border-radius: 4px;
+            background: #fff;
+        }
+    }
+
+    .magexc-cc__swap {
+        flex: 0 0 auto;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid #c2c2c2;
+        background: #fff;
+        cursor: pointer;
+        font-size: 1.2rem;
+        line-height: 1;
+        margin-bottom: 3px;
+        transition: transform 0.15s ease, background 0.15s ease;
+
+        &:hover {
+            background: #f5f5f5;
+        }
+
+        &:active {
+            transform: rotate(180deg);
+        }
+    }
+
+    .magexc-cc__result {
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 28px;
+    }
+
+    .magexc-cc__converted {
+        font-size: 2.1rem;
+        font-weight: 700;
+    }
+
+    .magexc-cc__rate-line {
+        margin-top: 6px;
+        color: #333;
+    }
+
+    .magexc-cc__rate-date {
+        margin-top: 2px;
+        font-size: 1.2rem;
+        color: #949494;
+    }
+
+    .magexc-cc__history-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 12px;
+
+        h2 {
+            margin: 0;
+            font-size: 1.6rem;
+        }
+    }
+
+    .magexc-cc__range-buttons {
+        display: flex;
+        gap: 6px;
+
+        button {
+            border: 1px solid #c2c2c2;
+            background: #fff;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+
+            &:hover {
+                background: #f5f5f5;
+            }
+
+            &.is-active {
+                background: #333;
+                color: #fff;
+                border-color: #333;
+            }
+        }
+    }
+
+    .magexc-cc__chart-wrap {
+        position: relative;
+        background: #fafafa;
+        border: 1px solid #eee;
+        border-radius: 4px;
+    }
+
+    .magexc-cc__chart-empty {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #949494;
+    }
+
+    svg[data-role='chart'] {
+        width: 100%;
+        height: 220px;
+        display: block;
+    }
+
+    .magexc-cc__chart-line {
+        stroke: #1979c3;
+        stroke-width: 2;
+    }
+
+    .magexc-cc__chart-area {
+        fill: rgba(25, 121, 195, 0.08);
+        stroke: none;
+    }
+
+    .magexc-cc__chart-dot {
+        fill: #1979c3;
+    }
+
+    .magexc-cc__chart-legend {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.2rem;
+        color: #6f7377;
+        margin-top: 6px;
+    }
+
+    .magexc-cc__attribution {
+        margin-top: 24px;
+        font-size: 1.1rem;
+        color: #949494;
+        text-align: center;
+    }
+}
